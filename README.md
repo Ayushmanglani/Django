@@ -56,7 +56,8 @@
      DataSet = Model1.objects.filter(filters).select_related("key_id")     
      ```
      &nbsp;&nbsp;&nbsp;&nbsp; This will return all field and values included in both the Models
-     &nbsp;&nbsp;&nbsp;&nbsp; Methods to Access values
+     
+     &nbsp;&nbsp;&nbsp;&nbsp; Methods to Access values:
      ```
      - FieldValue = DataSet[0].FieldName
      - for Data in DataSet:
