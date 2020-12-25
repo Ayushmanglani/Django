@@ -28,7 +28,7 @@
     - return DataSet.data
     ```
     
- 2. Applyin SQL Query on Django Model  
+ 2. Applying SQL Query on Django Model  
      * **To Fetch Records using SQL Query we can Use 'Raw' Keyword on Model** 
     ```     
     DataSet = DModel.objects.raw('query')
@@ -41,3 +41,14 @@
          print(Data.FieldName)
     ```
  
+ 3. Inner Join on two Django Model  
+     * First Step is to Declare ForeignKey in Main Model, which is primary key in another Model
+    ```
+    class Model2(models.Model):
+        id = models.IntegerField(primary_key=True)
+   
+    class Model1(models.Model):
+        id = models.IntegerField(primary_key=True)
+        emp_id = models.ForeignKey(Model2, on_delete=models.DO_NOTHING)
+    ```
+    &nbsp;&nbsp;&nbsp;&nbsp; Methods to Access any value form Dataset:
