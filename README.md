@@ -7,7 +7,7 @@
     ```
     DataSet = Model.objects.get(id=id)
     ```
-    &nbsp;&nbsp;&nbsp;&nbsp; To Access any value form Dataset:
+    &nbsp;&nbsp;&nbsp;&nbsp; Methods to Access any value form Dataset:
         
     ```
     FieldValue = DataSet.FieldNameAsMentionedInModel
@@ -18,7 +18,7 @@
     ```
     DataSet = Model.objects.filter(id=id)
     ```
-    &nbsp;&nbsp;&nbsp;&nbsp; To Access any value form Dataset:
+    &nbsp;&nbsp;&nbsp;&nbsp; Methods to Access any value form Dataset:
         
     ```
     - FieldValue = DataSet[0]['FieldNameAsMentionedInModel']
@@ -33,7 +33,7 @@
     ```     
     DataSet = DModel.objects.raw('query')
     ```
-    &nbsp;&nbsp;&nbsp;&nbsp; To Access any value form Dataset:
+    &nbsp;&nbsp;&nbsp;&nbsp; Methods to Access any value form Dataset:
         
     ```
     - FieldValue = DataSet[0].FieldName
