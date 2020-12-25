@@ -31,7 +31,7 @@
  2. Applying SQL Query on Django Model  
      * **To Fetch Records using SQL Query we can Use 'Raw' Keyword on Model** 
     ```     
-    DataSet = DModel.objects.raw('query')
+    DataSet = Model.objects.raw('query')
     ```
     &nbsp;&nbsp;&nbsp;&nbsp; Methods to Access any value form Dataset:
         
@@ -49,6 +49,19 @@
    
     class Model1(models.Model):
         id = models.IntegerField(primary_key=True)
-        emp_id = models.ForeignKey(Model2, on_delete=models.DO_NOTHING)
+        key_id = models.ForeignKey(Model2, on_delete=models.DO_NOTHING)
     ```
-    &nbsp;&nbsp;&nbsp;&nbsp; Methods to Access any value form Dataset:
+     * Then use ```select_related``` keyword on Main model, pass foreign key inside select_related (optional)
+     ```
+     DataSet = Model1.objects.filter(filters).select_related("key_id")     
+     ```
+     &nbsp;&nbsp;&nbsp;&nbsp; This will return all field and values included in both the Models
+     &nbsp;&nbsp;&nbsp;&nbsp; Methods to Access values
+     ```
+     - FieldValue = DataSet[0].FieldName
+     - for Data in DataSet:
+          print(Data.FieldName)    # To get Data from Model1
+          print(Data.key_id.FieldName)       # To get Data from Model2
+     - return DataSet.data   # This will return Data of Model1 Only (Not Prefered)         
+     ```
+     
