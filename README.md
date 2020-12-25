@@ -14,7 +14,7 @@
     ```
     <br/>
     
-    * **To Fetch a Set of Record**
+    * **To Fetch a Set of Records**
     ```
     DataSet = Model.objects.filter(id=id)
     ```
@@ -25,5 +25,19 @@
     - FieldValue = DataSet.values('FieldName')
     - for Data in DataSet:
           print(Data.FieldName)
+    - return DataSet.data
+    ```
+    
+ 2. Applyin SQL Query on Django Model  
+     * **To Fetch Records using SQL Query we can Use 'Raw' Keyword on Model** 
+    ```     
+    DataSet = DModel.objects.raw('query')
+    ```
+    &nbsp;&nbsp;&nbsp;&nbsp; To Access any value form Dataset:
+        
+    ```
+    - FieldValue = DataSet[0].FieldName
+    - for Data in DataSet:
+         print(Data.FieldName)
     ```
  
