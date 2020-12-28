@@ -52,6 +52,7 @@
         key_id = models.ForeignKey(Model2, on_delete=models.DO_NOTHING)
     ```
      * Then use ```select_related``` keyword on Main model, pass foreign key inside select_related (optional)
+     
      ```
      DataSet = Model1.objects.filter(filters).select_related("key_id")     
      ```
