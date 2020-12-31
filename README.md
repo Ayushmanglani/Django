@@ -66,4 +66,17 @@
           print(Data.key_id.FieldName)       # To get Data from Model2
      - return DataSet.data   # This will return Data of Model1 Only (Not Prefered)         
      ```
-     
+ 4. Dynamic filters on any ORM Model
+     * Create a python dictionary with a 'key' as a field to look with a parameter(optional) for it (i.e key__in , key__icontains, key) and a value to search
+ in the field.  
+
+     ```
+     - filters = {}
+       filters['name__icontains'] = 'A'
+       filters['id'] = '05'
+       filters['age__in'] = [5,10,15,20,15]
+     ```
+     &nbsp;&nbsp;&nbsp;&nbsp; Pass this filter dictionary to ORM as:
+     ```
+     - DataSet = Model.objects.filter(**filters)
+     ```     
