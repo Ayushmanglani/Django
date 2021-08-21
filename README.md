@@ -80,3 +80,9 @@
      ```
      - DataSet = Model.objects.filter(**filters)
      ```     
+5. Key With Space
+     ```     
+     firstname_reference = "data_info__first name"
+     data_object = data_object.filter(**{name_reference: 'Ayush'})
+     ```
+     * Here 'data_info' is column wth JSON data and 'first name' is key
