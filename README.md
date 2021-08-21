@@ -80,7 +80,7 @@
      ```
      - DataSet = Model.objects.filter(**filters)
      ```     
-5. Key With Space
+5. Fetching Data from JSON type column using Key With Space
      ```     
      firstname_reference = "data_info__first name"
      data_object = data_object.filter(**{name_reference: 'Ayush'})
